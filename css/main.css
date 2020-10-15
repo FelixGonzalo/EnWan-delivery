@@ -11,29 +11,25 @@ body {
     font-size: 16px;
 }
 
-.contenedor-principal{
-    margin: auto;
-    max-width: 1000px;
-    width: 90%;
-}
+/* ----- header ----- */
 
 .header {
-    background-color: rgb(81, 221, 175);
+    background: linear-gradient( rgba(38, 111, 174, 0.5), rgba(42, 82, 175, 0.5) ), url(../img/portada.jpg)  top center;
+    height: 100vh;
     font-family: 'Lobster';
     text-align: center;
-    text-shadow: 2px 1px 2px rgb(81, 121, 75);
+    color: #fff;
+    font-size: 1.5em;
 }
 
 .header__titulo {
-    color: rgb(0, 30, 50);
-    font-size: 2.5em;
-    padding: 0.3125em;
+    font-size: 3rem;
+    padding-top: 1.5em;
+    text-shadow: 4px 4px 1px #000;
 }
+.header__titulo span { font-size: 0.7em; }
 
-.header__titulo span {
-    color: rgb(0, 50, 70);
-    font-size: 0.8em;
-}
+/* ----- menu principal*/
 
 .nav {
     position: sticky;
@@ -42,23 +38,28 @@ body {
 }
 
 .nav__menu {
-    background-color: rgb(0, 100, 150);
+    background: #3a7bd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3a6073, #3a7bd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3a6073, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .nav__menu li { padding: 0.9375em; }
-.nav__menu li:hover { background-color:rgb(0, 150, 200); }
+.nav__menu li a:hover {text-shadow: -2px -1px 0px #000; }
 
 .nav__menu li a {
     text-decoration: none;
     color: #fff;
     font-size: 1.5em;
+    transition: 0.3s;
 }
 
-.nav__celular {
+/* ----- menu para celular*/
+
+.navcelular {
     display: none;
     background-color: rgb(0, 100, 150); 
     position: fixed;
@@ -70,13 +71,13 @@ body {
     z-index: 2;
 }
 
-.nav__celular li a {
+.navcelular li a {
     text-decoration: none;
     color: #fff;
     font-size: 2em;
 }
 
-.nav__celular-button {
+.navcelular-button {
     display: inline-block;
     font-size:3em;
     background-color: rgb(81, 221, 175);
@@ -89,85 +90,43 @@ body {
     border-radius: 0px 0px 20px 0px;
 }
 
-.nav__celular li { padding: 0.9375em; }
-.nav__celular:hover {
-    left: 0;
-}
+.navcelular li { padding: 0.9375em; }
+.navcelular:hover { left: 0; }
 
+/* ----- main ----- */
 
 .main {
-    color:  rgb(0, 50, 70);
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
     text-align: center;
-    margin-top: 10px;
 }
 
 .main section {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 100px;
     margin-bottom: 20px;
 }
 
 .main__subtitulo {
-    letter-spacing: 3px;
+    font-weight: 900;
     margin-bottom: 20px;
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: rgb(4, 117, 155);
 }
 
-.main__eslogan {
-    background-color:rgb(102, 182, 223);
-    margin-bottom: 20px;
-    padding: 10px 30px;
-    text-align: center;
-    color: rgb(0, 50, 70);
-    font-size: 1.5em;
-}
-
-.main__eslogan-resaltar {
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-.contacto { background-color:rgba(142, 204, 224,.1); }
-.mediopago { background-color:rgba(142, 224, 149, 0.1); }
-.aliados { background-color:rgba(224, 216, 142, 0.1); }
-
-.contacto__redsocial{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.redsocial{
-    display: block;
-    width: 60px;
-    height: 60px;
-    color: white;
-    margin: 0px 20px 20px;
-    border-radius: 100px;
-    transition: .3s;
-}
-
-.redsocial i {
-    font-size: 25px;
-    line-height: 60px;
-}
-
-.facebook { background:#3b5998; }
-.instagram { background: #c13584; }
-
-.contacto__redsocial-icono:hover a { animation: icono .5s ease; }
-@keyframes icono {
-    from{ transform: rotate3d(0,0,0,0); }
-    to{ transform: rotate3d(0,1,0,360deg); }
-}
+/* ----- contacto */
 
 .contacto__panel {
     display: flex;
     font-size: 1.1em;
+    justify-content: center;
     flex-wrap: wrap ;
 }
 
 .contacto img {
     width: 50%;
+    max-width: 500px;
 }
 
 .contacto__panel-info {
@@ -175,28 +134,46 @@ body {
     background-color: rgb(81, 221, 175);
     border-radius: 10px;
     border-bottom: 3px solid rgb(131, 131, 131);
-    padding:10px;
+    padding: 30px;
     position: relative;
+    font-size: 1.5rem;
 }
 
-.icono-whatsapp {
-    color: rgb(232, 249, 255);
-    border-radius: 100px;
-    font-size: 2em;
-    margin:  0px;
-    position: absolute;
-    top: 15px;
-    left: -1px;
-}
-
-.contacto__panel-horario {
-    margin-top: 10px;
-}
+/* ----- medio de pago */
 
 .mediopago img {
     width: 50%;
     max-width: 400px;
 }
+
+/* ----- lugares */
+
+.lugares__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lugares__lista .lugar{
+    margin: 20px;
+}
+
+.lugares__lista .lugar img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.lugares__lista .lugar figcaption {
+    font-size: 1rem;
+    padding: 5px;
+    text-shadow: 1px 1px 2px #222;
+    background-color: rgb(228, 210, 210);
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+/* ----- Aliados */
 
 .aliados__categorias {
     background-color: rgb(214, 226, 184);
@@ -213,6 +190,7 @@ body {
     padding-right: 10px;
     padding-left: 10px;
 }
+
 .activo {
     font-weight: bold;
 } /*js*/
@@ -287,6 +265,8 @@ body {
     min-width: 300px;
 }
 
+/* ----- footer ----- */
+
 .footer {
     background-color: rgb(0, 70, 100);
     padding: 50px;
@@ -299,13 +279,40 @@ body {
     margin: 20px;
 }
 
+.contacto__redsocial{
+    display: flex;
+    justify-content: center;
+}
+
+.redsocial{
+    display: block;
+    width: 60px;
+    height: 60px;
+    color: white;
+    margin: 0 30px 20px;
+    border-radius: 100px;
+    transition: .3s;
+}
+
+.redsocial i {
+    font-size: 25px;
+    line-height: 60px;
+}
+
+.facebook { background:#3b5998; }
+.instagram { background: #c13584; }
+
+.contacto__redsocial-icono:hover a { animation: icono .5s ease; }
+@keyframes icono {
+    from{ transform: rotate3d(0,0,0,0); }
+    to{ transform: rotate3d(0,1,0,360deg); }
+}
+
+/* ----- responsive design ----- */
+
 /*tablets horizontal*/
 @media (max-width: 1000px) {
     body { font-size: 14px; }
-    .contenedor-principal{
-        margin: 0;
-        width: 100%;
-    }
 }
 
 /*tablets*/
@@ -315,7 +322,7 @@ body {
 
 /*phone vertical*/
 @media (max-width: 576px) {
-    .nav__celular { display: block; }
+    .navcelular { display: block; }
     body { font-size: 11px; }
     .header { border-bottom: 10px solid rgb(0, 100, 150); }
     .nav { display: none; }
