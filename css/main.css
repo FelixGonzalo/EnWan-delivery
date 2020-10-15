@@ -97,14 +97,13 @@ body {
 
 .main {
     margin: auto;
-    width: 90%;
     max-width: 1200px;
     text-align: center;
 }
 
 .main section {
     padding-top: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .main__subtitulo {
@@ -113,6 +112,12 @@ body {
     font-size: 2em;
     margin-bottom: 50px;
     color: rgb(4, 117, 155);
+}
+
+.main__info {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: rgba(30, 75, 111);
 }
 
 /* ----- contacto */
@@ -155,7 +160,7 @@ body {
 }
 
 .lugares__lista .lugar{
-    margin: 20px;
+    margin: 10px;
 }
 
 .lugares__lista .lugar img {
@@ -172,97 +177,24 @@ body {
     border-radius: 0px 0px 10px 10px;
 }
 
+/* ----- aliados*/
 
-/* ----- Aliados */
-
-.aliados__categorias {
-    background-color: rgb(214, 226, 184);
-    border-radius: 20px;
-    padding: 10px 0px;
-    color: rgb(0, 100, 150);
-    max-width: 500px;
-    margin: auto;
-    font-size: 1.1em;
-}
-
-.aliados__categorias a {
-    color: rgb(0, 100, 150);
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-.activo {
-    font-weight: bold;
-} /*js*/
-
-/*Inicio_Muuri*/
-.grid {
-    position: relative;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s linear 1s;
-}
-.grid.imagenes-cargadas { opacity: 1; }
-
-.grid .item {
-    position: absolute;
-    display: block;
-    margin: 10px; /*20px*/
-    width: calc(20% - 20px); /*5 items en cada columna = 100%*/
-    border: 4px solid rgb(214, 226, 184);
-    border-radius: 10px;
-}
-
-.grid .item-contenido { position: relative; }
-
-.grid .item img {
-    width: 100%;
-    cursor: pointer;
-}
-/*Fin_Muuri*/
-
-.overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0, 0,0, .9);
-    width: 100%;
-    height: 100vh;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.overlay.activo {
+.aliados__lista {
     display: flex;
-    z-index: 10;
-}/*js*/
-
-.overlay #btn-cerrar {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: #fff;
-    margin-left: 300px;
-}
-.overlay h3 {
-    margin: 0;
-    padding: 0;
-    height: 0;
-    color: #fff;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.overlay__descripcion {
-    text-align: left;
-    margin-top: 5px;
-    background-color: #fff;
-    padding: 5px 20px;
-    border-radius: 5px;
-    max-width: 300px;
-    min-width: 300px;
+.aliados__lista .aliado{
+    margin: 5px;
+    
+}
+
+.aliados__lista .aliado img {
+    max-width: 100px;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid rgba(69, 68, 68, 0.9);
 }
 
 /* ----- footer ----- */
@@ -270,18 +202,24 @@ body {
 .footer {
     background-color: rgb(0, 70, 100);
     padding: 50px;
-    margin-top: 0.9375em;
+    margin-top: 3rem;
     color:#fff;
     text-align: center;
 }
 
 .footer hr {
-    margin: 20px;
+    margin: 10px;
 }
 
-.contacto__redsocial{
+.footer__autor a{ 
+    color: rgb(230, 225, 225);
+    text-decoration: none;
+}
+
+.redessociales{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .redsocial{
@@ -289,12 +227,12 @@ body {
     width: 60px;
     height: 60px;
     color: white;
-    margin: 0 30px 20px;
+    margin: 0 10px 20px;
     border-radius: 100px;
     transition: .3s;
 }
 
-.redsocial i {
+.redessociales i {
     font-size: 25px;
     line-height: 60px;
 }
@@ -302,7 +240,7 @@ body {
 .facebook { background:#3b5998; }
 .instagram { background: #c13584; }
 
-.contacto__redsocial-icono:hover a { animation: icono .5s ease; }
+.redessociales-icono:hover a { animation: icono .5s ease; }
 @keyframes icono {
     from{ transform: rotate3d(0,0,0,0); }
     to{ transform: rotate3d(0,1,0,360deg); }
@@ -316,8 +254,8 @@ body {
 }
 
 /*tablets*/
-@media (min-width: 992px) {
-    body { font-size: 14px; } 
+@media (max-width: 992px) {
+    body { font-size: 13px; } 
 }
 
 /*phone vertical*/
